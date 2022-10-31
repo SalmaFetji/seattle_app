@@ -5,5 +5,5 @@ import pandas as pd
 st.write('Hello, *World DE MERDE!* :sunglasses:')
 
 
-st.set_page_config(page_title="Seattle Energy", page_icon=":high_brightness:", layout="wide")
+st.markdown("<h1 style='text-align: center; color: red;'>Some title</h1>", unsafe_allow_html=True)
 
