@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from PIL import Image
 import pickle
-
+from sklearn.model_selection import train_test_split
 
 st.write('Hello, *World* :sunglasses:')
 
@@ -58,8 +58,8 @@ d = {'NaturalGas(kBtu)': [NaturalGas], 'SteamUse(kBtu)': [SteamUse],'GHGEmission
 X_test = pd.DataFrame(data=d)
 
 
-with open('rf_app_pickle' , 'rb') as f:
-    model= pickle.load(f)
+model = pickle.load(open('rf_app_pickle','rb'))
+
 
 y_pred=model.predict(X_test)
 
