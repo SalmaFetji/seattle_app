@@ -4,8 +4,15 @@ import pandas as pd
 
 st.write('Hello, *World* :sunglasses:')
 
+image = Image.open('logo.png')
 
-st.markdown("<h1 style='text-align: center; color: red;'>Seattle energy</h1>", unsafe_allow_html=True)
+colT1,colT2, colT3 = st.columns([1,8,1])
+with colT2:
+    st.image(image, width=700)
+
+
+
+st.markdown("<h1 style='text-align: center; color: red;'>Seattle Energy Consumption</h1>", unsafe_allow_html=True)
 
 
 option = st.selectbox(
