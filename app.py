@@ -8,6 +8,7 @@ import os
 
 MODEL_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)),'data/rf_app_pickle.pkl')
 
+model = pickle.load(open('data/rf_app_pickle.pickle', 'rb'))
 
 st.write('Hello, *World* :sunglasses:')
 
@@ -25,56 +26,59 @@ st.markdown("<h1 style='text-align: center; color: blue;'>CO2 Emissions Predicti
 st.info(":high_brightness: Welcome here !  caracteristiques batiments")
 
 
-PrimaryPropertyType = st.selectbox(
-    'What is your property Use ?',
-    ('Low-Rise Multifamily', 'Mixed Use Property', 'Senior Care Community', "University"))
+
+def main():
 
 
-NumberofFloors = st.number_input('Number of floors')
-st.write('The current number is ', NumberofFloors)
-
-BuildingAge = st.number_input('Age of the building')
-st.write('The current number is ', BuildingAge)
-
-harvesine_distance = st.number_input('Distance from Seattle Center')
-st.write('The current number is ', harvesine_distance)
+	PrimaryPropertyType = st.selectbox(
+    		'What is your property Use ?',
+    		('Low-Rise Multifamily', 'Mixed Use Property', 'Senior Care Community', "University"))
 
 
-# # welcome info
-st.info(":high_brightness: Welcome here !  Hop,  you can predict the energy use by the building in Seattle and the GHG emissions by year")
+	NumberofFloors = st.number_input('Number of floors')
+	st.write('The current number is ', NumberofFloors)
 
-NaturalGas = st.number_input('NaturalGas(kBtu)')
-st.write('The current number is ', NaturalGas)
+	BuildingAge = st.number_input('Age of the building')
+	st.write('The current number is ', BuildingAge)
 
-SteamUse = st.number_input('SteamUse(kBtu)')
-st.write('The current number is ', SteamUse)
-
-GHGEmissionsIntensity = st.number_input('GHGEmissionsIntensity')
-st.write('The current number is ', GHGEmissionsIntensity)
+	harvesine_distance = st.number_input('Distance from Seattle Center')
+	st.write('The current number is ', harvesine_distance)
 
 
-SourceEUI = st.number_input('SourceEUI(kBtu/sf)')
-st.write('The current number is ', SourceEUI)
+	# # welcome info
+	st.info(":high_brightness: Welcome here !  Hop,  you can predict the energy use by the building in Seattle and the GHG emissions by year")
+
+	NaturalGas = st.number_input('NaturalGas(kBtu)')
+	st.write('The current number is ', NaturalGas)
+
+	SteamUse = st.number_input('SteamUse(kBtu)')
+	st.write('The current number is ', SteamUse)
+
+	GHGEmissionsIntensity = st.number_input('GHGEmissionsIntensity')
+	st.write('The current number is ', GHGEmissionsIntensity)
 
 
-
-
-d = {'NaturalGas(kBtu)': [NaturalGas], 'SteamUse(kBtu)': [SteamUse],'GHGEmissionsIntensity': [GHGEmissionsIntensity],'SourceEUI(kBtu/sf)': [SourceEUI], 'PrimaryPropertyType': [PrimaryPropertyType], 'NumberofFloors': [NumberofFloors], 'harvesine_distance': [harvesine_distance], 'BuildingAge': [BuildingAge]}   
-X_test = pd.DataFrame(data=d)
-
-
-
-
-model = pickle.load(open('data/rf_app_pickle.pickle', 'rb'))
-
-st.dataframe(X_test)
-
-y_pred = model.predict(X_test)
+	SourceEUI = st.number_input('SourceEUI(kBtu/sf)')
+	st.write('The current number is ', SourceEUI)
 
 
 
 
-#if st.button('Predict Consumption'):
-   # st.write('The building consumption is ', y_pred)
-#else:
-    #st.write('Hit the button')
+	d = {'NaturalGas(kBtu)': [NaturalGas], 'SteamUse(kBtu)': [SteamUse],'GHGEmissionsIntensity': [GHGEmissionsIntensity],'SourceEUI(kBtu/sf)': [SourceEUI], 'PrimaryPropertyType': [PrimaryPropertyType], 'NumberofFloors': [NumberofFloors], 'harvesine_distance': [harvesine_distance], 'BuildingAge': [BuildingAge]}   
+	X_test = pd.DataFrame(data=d)
+
+
+	st.dataframe(X_test)
+
+	#y_pred = model.predict(X_test)
+
+
+
+
+	#if st.button('Predict Consumption'):
+   	# st.write('The building consumption is ', y_pred)
+	#else:
+    	#st.write('Hit the button')
+
+if __name__ == '__main__':
+    main()
