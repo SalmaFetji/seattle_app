@@ -65,7 +65,7 @@ def main():
 
 
 	#d = {'NaturalGas(kBtu)': [NaturalGas], 'SteamUse(kBtu)': [SteamUse],'GHGEmissionsIntensity': [GHGEmissionsIntensity],'SourceEUI(kBtu/sf)': [SourceEUI], 'PrimaryPropertyType': [PrimaryPropertyType], 'NumberofFloors': [NumberofFloors], 'harvesine_distance': [harvesine_distance], 'BuildingAge': [BuildingAge]}   
-	dd = {'NaturalGas(kBtu)': [1], 'SteamUse(kBtu)': [1],'GHGEmissionsIntensity': [1],'SourceEUI(kBtu/sf)': [1], 'PrimaryPropertyType': [0], 'NumberofFloors': [1], 'harvesine_distance': [1], 'BuildingAge': [1]}
+	dd = {'NaturalGas(kBtu)': [1], 'SteamUse(kBtu)': [1],'GHGEmissionsIntensity': [1],'SourceEUI(kBtu/sf)': [1], 'PrimaryPropertyType': ["bref"], 'NumberofFloors': [1], 'harvesine_distance': [1], 'BuildingAge': [1]}
 	X_test = pd.DataFrame(data=dd)
 
 
