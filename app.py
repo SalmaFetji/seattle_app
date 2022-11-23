@@ -16,6 +16,13 @@ model = pickle.load(open('data/rf_app_pickle.pickle', 'rb'))
 
 st.write('Hello, *World* :sunglasses:')
 
+image = Image.open('logo2.png')
+
+colT1,colT2, colT3 = st.columns([0,0,0])
+with colT2:
+    st.image(image, width=100)
+
+
 image = Image.open('logo.png')
 
 colT1,colT2, colT3 = st.columns([1,8,1])
@@ -23,11 +30,6 @@ with colT2:
     st.image(image, width=700)
 
 
-image = Image.open('logo2.png')
-
-colT1,colT2, colT3 = st.columns([1,1,1])
-with colT2:
-    st.image(image, width=100)
 
 
 st.markdown("<h1 style='text-align: center; color: blue;'>CO2 Emissions Predictions</h1>", unsafe_allow_html=True)
