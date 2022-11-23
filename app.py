@@ -58,7 +58,7 @@ d = {'NaturalGas(kBtu)': [NaturalGas], 'SteamUse(kBtu)': [SteamUse],'GHGEmission
 X_test = pd.DataFrame(data=d)
 
 
-model = pickle.load(open('seattle_app/rf_app_pickle','rb'))
+model = pickle.load(open('rf_app_pickle','rb'))
 
 
 #y_pred=model.predict(X_test)
