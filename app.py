@@ -13,7 +13,7 @@ with colT2:
 
 
 
-st.markdown("<h1 style='text-align: center; color: red;'>Seattle Energy Consumption</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: blue;'>CO2 Emissions Predictions</h1>", unsafe_allow_html=True)
 
 
 option = st.selectbox(
