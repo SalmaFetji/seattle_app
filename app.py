@@ -67,9 +67,9 @@ X_test = pd.DataFrame(data=d)
 
 model = pickle.load(open('data/rf_app_pickle.pickle', 'rb'))
 
+st.dataframe(X_test)
 
-
-y_pred = model.predict(X_test)
+#y_pred = model.predict(X_test)
 
 
 
