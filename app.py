@@ -69,9 +69,9 @@ def main():
 	X_test = pd.DataFrame(data=d)
 
 
-	st.dataframe(X_test)
+	#st.dataframe(X_test)
 
-	y_pred = model.predict(X_test)
+	#y_pred = model.predict(X_test)
 
 
 
