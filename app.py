@@ -37,21 +37,22 @@ st.write('The current number is ', number3)
 # # welcome info
 st.info(":high_brightness: Welcome here !  Hop,  you can predict the energy use by the building in Seattle and the GHG emissions by year")
 
-number4 = st.number_input('NaturalGas(kBtu)')
-st.write('The current number is ', number4)
+NaturalGas = st.number_input('NaturalGas(kBtu)')
+st.write('The current number is ', NaturalGas)
 
-number5 = st.number_input('SteamUse(kBtu)')
-st.write('The current number is ', number5)
+SteamUse = st.number_input('SteamUse(kBtu)')
+st.write('The current number is ', SteamUse)
 
-number6 = st.number_input('GHGEmissionsIntensity')
-st.write('The current number is ', number6)
+GHGEmissionsIntensity = st.number_input('GHGEmissionsIntensity')
+st.write('The current number is ', GHGEmissionsIntensity)
 
-number7 = st.number_input('SourceEUI(kBtu/sf)')
-st.write('The current number is ', number7)
+
+SourceEUI = st.number_input('SourceEUI(kBtu/sf)')
+st.write('The current number is ', SourceEUI)
 
         
-with open('rf_app_pickle' , 'rb') as f:
-    model= pickle.load(f)
+#with open('rf_app_pickle' , 'rb') as f:
+#    model= pickle.load(f)
 
 
 if st.button('Predict Consumption'):
