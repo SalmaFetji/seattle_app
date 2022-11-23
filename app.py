@@ -5,6 +5,7 @@ import pickle
 import numpy as np
 
 
+
 st.write('Hello, *World* :sunglasses:')
 
 image = Image.open('logo.png')
@@ -60,7 +61,7 @@ X_test = pd.DataFrame(data=d)
 
 
 
-model = pickle.load(open('rf_app_pickle','rb'))
+model = pickle.load(open('rf_app_pickle.pkl','rb'))
 
 
 
