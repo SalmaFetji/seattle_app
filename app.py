@@ -69,9 +69,9 @@ model = pickle.load(open('data/rf_app_pickle.pickle', 'rb'))
 
 
 
-#y_pred=model.predict(X_test)
+y_pred=model.predict(X_test)
 
-y_pred = 3400
+
 
 
 if st.button('Predict Consumption'):
