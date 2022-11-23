@@ -3,7 +3,10 @@ import pandas as pd
 from PIL import Image
 import pickle
 import numpy as np
+import os
 
+
+MODEL_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)),'data/rf_app_pickle.pkl')
 
 
 st.write('Hello, *World* :sunglasses:')
@@ -61,7 +64,7 @@ X_test = pd.DataFrame(data=d)
 
 
 
-model = pickle.load(open('rf_app_pickle.pkl','rb'))
+model = pickle.load(open(MODEL_DIR,'rb'))
 
 
 
