@@ -17,7 +17,7 @@ with colT2:
 st.markdown("<h1 style='text-align: center; color: blue;'>CO2 Emissions Predictions</h1>", unsafe_allow_html=True)
 
 # # welcome info
-    st.info(":high_brightness: Welcome here !  caracteristiques batiments")
+st.info(":high_brightness: Welcome here !  caracteristiques batiments")
 
 
 option = st.selectbox(
@@ -35,7 +35,7 @@ number3 = st.number_input('Distance from Seattle Center')
 st.write('The current number is ', number3)
 
 # # welcome info
-    st.info(":high_brightness: Welcome here !  Hop,  you can predict the energy use by the building in Seattle and the GHG emissions by year")
+st.info(":high_brightness: Welcome here !  Hop,  you can predict the energy use by the building in Seattle and the GHG emissions by year")
 
 number4 = st.number_input('NaturalGas(kBtu)')
 st.write('The current number is ', number4)
@@ -50,8 +50,8 @@ number7 = st.number_input('SourceEUI(kBtu/sf)')
 st.write('The current number is ', number7)
 
         
-    with open('rf_app_pickle' , 'rb') as f:
-        model= pickle.load(f)
+with open('rf_app_pickle' , 'rb') as f:
+    model= pickle.load(f)
 
 
 if st.button('Predict Consumption'):
