@@ -20,19 +20,20 @@ st.markdown("<h1 style='text-align: center; color: blue;'>CO2 Emissions Predicti
 st.info(":high_brightness: Welcome here !  caracteristiques batiments")
 
 
-option = st.selectbox(
+PrimaryPropertyType = st.selectbox(
     'What is your property Use ?',
     ('Low-Rise Multifamily', 'Mixed Use Property', 'Senior Care Community', "University"))
 
 
-number = st.number_input('Number of floors')
-st.write('The current number is ', number)
+NumberofFloors = st.number_input('Number of floors')
+st.write('The current number is ', NumberofFloors)
 
-number2 = st.number_input('Age of the building')
-st.write('The current number is ', number2)
+BuildingAge = st.number_input('Age of the building')
+st.write('The current number is ', BuildingAge)
 
-number3 = st.number_input('Distance from Seattle Center')
-st.write('The current number is ', number3)
+harvesine_distance = st.number_input('Distance from Seattle Center')
+st.write('The current number is ', harvesine_distance)
+
 
 # # welcome info
 st.info(":high_brightness: Welcome here !  Hop,  you can predict the energy use by the building in Seattle and the GHG emissions by year")
@@ -50,12 +51,20 @@ st.write('The current number is ', GHGEmissionsIntensity)
 SourceEUI = st.number_input('SourceEUI(kBtu/sf)')
 st.write('The current number is ', SourceEUI)
 
-        
-#with open('rf_app_pickle' , 'rb') as f:
-#    model= pickle.load(f)
+
+
+
+d = {'NaturalGas(kBtu)': [NaturalGas], 'SteamUse(kBtu)': [SteamUse],'GHGEmissionsIntensity': [GHGEmissionsIntensity],'SourceEUI(kBtu/sf)': [SourceEUI], 'PrimaryPropertyType': [PrimaryPropertyType], 'NumberofFloors': [NumberofFloors], 'harvesine_distance': [harvesine_distance], 'BuildingAge': [BuildingAge]}   
+X_test = pd.DataFrame(data=d)
+
+
+with open('rf_app_pickle' , 'rb') as f:
+    model= pickle.load(f)
+
+y_pred=model.predict(X_test)
 
 
 if st.button('Predict Consumption'):
-    st.write('The building consumption is ')
+    st.write('The building consumption is ', y_pred)
 else:
     st.write('Hit the button')
