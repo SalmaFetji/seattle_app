@@ -18,7 +18,7 @@ st.write('Hello, *World* :sunglasses:')
 
 image = Image.open('logo2.png')
 
-colT1,colT2, colT3 = st.columns([0,0,0])
+colT1,colT2, colT3 = st.columns([1,0,0])
 with colT2:
     st.image(image, width=100)
 
