@@ -64,13 +64,14 @@ def main():
 
 
 
-	d = {'NaturalGas(kBtu)': [NaturalGas], 'SteamUse(kBtu)': [SteamUse],'GHGEmissionsIntensity': [GHGEmissionsIntensity],'SourceEUI(kBtu/sf)': [SourceEUI], 'PrimaryPropertyType': [PrimaryPropertyType], 'NumberofFloors': [NumberofFloors], 'harvesine_distance': [harvesine_distance], 'BuildingAge': [BuildingAge]}   
+	#d = {'NaturalGas(kBtu)': [NaturalGas], 'SteamUse(kBtu)': [SteamUse],'GHGEmissionsIntensity': [GHGEmissionsIntensity],'SourceEUI(kBtu/sf)': [SourceEUI], 'PrimaryPropertyType': [PrimaryPropertyType], 'NumberofFloors': [NumberofFloors], 'harvesine_distance': [harvesine_distance], 'BuildingAge': [BuildingAge]}   
+	d = {'NaturalGas(kBtu)': [100], 'SteamUse(kBtu)': [100],'GHGEmissionsIntensity': [100],'SourceEUI(kBtu/sf)': [100], 'PrimaryPropertyType': [University], 'NumberofFloors': [100], 'harvesine_distance': [100], 'BuildingAge': [100]}
 	X_test = pd.DataFrame(data=d)
 
 
 	st.dataframe(X_test)
 
-	#y_pred = model.predict(X_test)
+	y_pred = model.predict(X_test)
 
 
 
