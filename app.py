@@ -81,7 +81,7 @@ def main():
 
 
 	if st.button('Predict Consumption'):
-   		st.write('The building consumption is ', y_pred)
+   		st.write('The building consumption is ', float(y_pred))
 	else:
     		st.write('Hit the button')
 
