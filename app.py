@@ -4,7 +4,6 @@ from PIL import Image
 import pickle
 import numpy as np
 import os
-import sklearn 
 
 
 MODEL_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)),'data/rf_app_pickle.pkl')
