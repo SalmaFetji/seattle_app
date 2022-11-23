@@ -69,12 +69,12 @@ model = pickle.load(open('data/rf_app_pickle.pickle', 'rb'))
 
 
 
-y_pred=model.predict(X_test)
+y_pred = model.predict(X_test)
 
 
 
 
-if st.button('Predict Consumption'):
-    st.write('The building consumption is ', y_pred)
-else:
-    st.write('Hit the button')
+#if st.button('Predict Consumption'):
+   # st.write('The building consumption is ', y_pred)
+#else:
+    #st.write('Hit the button')
