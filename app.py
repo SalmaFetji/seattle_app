@@ -4,6 +4,10 @@ from PIL import Image
 import pickle
 import numpy as np
 import os
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.pipeline import Pipeline
+
+
 
 
 MODEL_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)),'data/rf_app_pickle.pkl')
@@ -65,11 +69,11 @@ def main():
 
 
 	#d = {'NaturalGas(kBtu)': [NaturalGas], 'SteamUse(kBtu)': [SteamUse],'GHGEmissionsIntensity': [GHGEmissionsIntensity],'SourceEUI(kBtu/sf)': [SourceEUI], 'PrimaryPropertyType': [PrimaryPropertyType], 'NumberofFloors': [NumberofFloors], 'harvesine_distance': [harvesine_distance], 'BuildingAge': [BuildingAge]}   
-	dd = {'NaturalGas(kBtu)': [1], 'SteamUse(kBtu)': [1],'GHGEmissionsIntensity': [1],'SourceEUI(kBtu/sf)': [1], 'PrimaryPropertyType': ["bref"], 'NumberofFloors': [1], 'harvesine_distance': [1], 'BuildingAge': [1]}
-	X_test = pd.DataFrame(data=dd)
+	d = {'NaturalGas(kBtu)': [100], 'SteamUse(kBtu)': [100],'GHGEmissionsIntensity': [100],'SourceEUI(kBtu/sf)': [100], 'PrimaryPropertyType': ["University"], 'NumberofFloors': [100], 'harvesine_distance': [100], 'BuildingAge': [100]}
+	X_test = pd.DataFrame(data=d)
 
 
-	#st.dataframe(X_test)
+	st.dataframe(X_test)
 
 	y_pred = model.predict(X_test)
 
