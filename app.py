@@ -14,7 +14,6 @@ MODEL_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)),'data/rf_app
 
 model = pickle.load(open('data/rf_app_pickle.pickle', 'rb'))
 
-st.write('Hello, *World* :sunglasses:')
 
 
 
